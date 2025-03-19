@@ -50,9 +50,9 @@ def berechnung(teilnehmer, ausgaben):
         for person in ausgabe['beteiligt']:
             saldo[person] -= betrag_pro_person
     
-    print("Schulden-Berechnung:")
-    for name, betrag in saldo.items():
-        print(f"{name}: {betrag:.2f} EUR")
+    return saldo
+        
+        
 
 # Hauptprogramm
 def main():
@@ -64,7 +64,10 @@ def main():
         if action == 'n':
             ausgabe_erfassen(teilnehmer, ausgaben)
         elif action == 'b':
-            berechnung(teilnehmer, ausgaben)
+            saldo = berechnung(teilnehmer, ausgaben)
+            print("Schulden-Berechnung:")
+            for name, betrag in saldo.items():
+                print(f"{name}: {betrag:.2f} EUR")
         elif action == 'q':
             break
         else:
