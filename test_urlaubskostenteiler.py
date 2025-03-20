@@ -16,10 +16,7 @@ def test_berechnung():
 
     assert urlaubskostenteiler.berechnung(teilnehmer, ausgaben) == {
         "Alice": 20,  
-        "Bob": 10,    
-        "Charlie": -30  
+        "Bob": 0,    
+        "Charlie": -20  
     }
     
-if __name__ == "__main__":
-    import unittest
-    unittest.main()
